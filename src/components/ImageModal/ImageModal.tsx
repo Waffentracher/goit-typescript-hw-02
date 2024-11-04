@@ -1,5 +1,6 @@
 import React from 'react';
-import './ImageModal.module.css';
+import styles from './ImageModal.module.css';
+
 interface ImageModalProps {
   isOpen: boolean;
   imageUrl: string;
@@ -11,10 +12,10 @@ const ImageModal: React.FC<ImageModalProps> = ({ isOpen, imageUrl, altDescriptio
   if (!isOpen) return null;
 
   return (
-    <div className="image-modal" onClick={onClose}>
-      <div className="image-modal-content" onClick={(e) => e.stopPropagation()}>
-        <img src={imageUrl} alt={altDescription} />
-        <button onClick={onClose}>Close</button>
+    <div className={styles.imageModal} onClick={onClose}>
+      <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+        <img src={imageUrl} alt={altDescription} className={styles.modalImage} />
+        <button onClick={onClose} className={styles.closeButton}>×</button>
       </div>
     </div>
   );

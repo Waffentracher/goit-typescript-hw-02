@@ -1,6 +1,5 @@
 import React from 'react';
-import './ImageCard.module.css';
-// Інший код...
+import styles from './ImageCard.module.css';
 
 interface ImageCardProps {
   id: string;
@@ -11,8 +10,8 @@ interface ImageCardProps {
 
 const ImageCard: React.FC<ImageCardProps> = ({ id, url, altDescription, onClick }) => {
   return (
-    <div className="image-card" onClick={() => onClick(id)}>
-      <img src={url} alt={altDescription} />
+    <div className={styles.imageCard} onClick={() => onClick(id)}>
+      <img src={url} alt={altDescription} className={styles.image} />
     </div>
   );
 };

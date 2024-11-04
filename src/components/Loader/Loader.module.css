@@ -1,4 +1,7 @@
 .loader {
     margin: 20px auto;
     font-size: 18px;
+    text-align: center;
+    color: #585858;
+    font-weight: bold;
 }

@@ -1,6 +1,12 @@
-.image-gallery {
+.imageGallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 15px;
     justify-content: center;
+    max-width: 100%;
+}
+
+.imageCard {
+    width: 200px;
+    height: 200px;
 }

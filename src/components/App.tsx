@@ -6,7 +6,7 @@ import Loader from '../components/Loader/Loader';
 import LoadMoreBtn from '../components/LoadMoreButton/LoadMoreBtn';
 import ErrorMessage from '../components/ErrorMessage/ErrorMessage';
 import { fetchImages } from './api';
-import './';
+import styles from './App.module.css';
 
 interface Image {
   id: string;
@@ -27,7 +27,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     if (query === '') return;
-    
+
     const loadImages = async () => {
       setIsLoading(true);
       setError(null);
@@ -64,7 +64,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="app">
+    <div className={styles.app}>
       <SearchBar onSubmit={handleSearchSubmit} />
       {error && <ErrorMessage message={error} />}
       <ImageGallery images={images} onImageClick={handleImageClick} />
